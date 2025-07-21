@@ -1,0 +1,273 @@
+# LeetCoach Project - Git Ignore File
+
+# ================================
+# Node.js Dependencies
+# ================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ================================
+# Environment Variables
+# ================================
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.staging
+
+# ================================
+# Database Files
+# ================================
+# MongoDB local files
+data/
+db/
+*.db
+*.sqlite
+*.sqlite3
+
+# ================================
+# Build & Distribution Files
+# ================================
+# Frontend build
+frontend/dist/
+frontend/build/
+frontend/.next/
+frontend/out/
+
+# Backend build
+backend/dist/
+backend/build/
+backend/public/
+
+# ================================
+# Logs
+# ================================
+logs/
+*.log
+log/
+*.log.*
+
+# ================================
+# Runtime & Temporary Files
+# ================================
+pids/
+*.pid
+*.seed
+*.pid.lock
+.npm
+.eslintcache
+.nyc_output
+.grunt
+bower_components
+.lock-wscript
+build/Release
+.coverage
+.nyc_output
+.cache
+
+# ================================
+# IDE & Editor Files
+# ================================
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ================================
+# Operating System Files
+# ================================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ================================
+# Testing & Coverage
+# ================================
+coverage/
+*.lcov
+.nyc_output/
+jest_coverage/
+test-results/
+playwright-report/
+test-results-*
+
+# ================================
+# Package Manager Files
+# ================================
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.pnpm-store/
+.yarn/
+.pnp.*
+
+# ================================
+# Deployment & DevOps
+# ================================
+.vercel
+.netlify
+.firebase/
+.github/workflows/secrets/
+
+# Docker
+Dockerfile.prod
+docker-compose.override.yml
+.dockerignore
+
+# Kubernetes
+*.yaml.backup
+*.yml.backup
+
+# ================================
+# Security & Sensitive Files
+# ================================
+# API Keys
+config/keys.js
+config/prod.js
+secrets/
+credentials/
+certificates/
+
+# SSL Certificates
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+
+# ================================
+# Application Specific
+# ================================
+# LeetCoach specific
+uploads/
+temp/
+cache/
+storage/
+backups/
+exports/
+
+# User generated content
+user-data/
+sessions/
+quiz-results/
+revision-history/
+
+# AI Service logs
+ai-logs/
+gemini-logs/
+
+# Performance monitoring
+profiling/
+benchmarks/
+
+# ================================
+# Miscellaneous
+# ================================
+*.tgz
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Lock files for editors
+.#*
+
+# Runtime directories
+tmp/
+temp/
+
+# ESLint
+.eslintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# Storybook
+.out
+.storybook-out
+
+# ================================
+# Keep Important Files
+# ================================
+# Keep these files (override ignore patterns)
+!.gitkeep
+!.env.example
+!README.md
+!LICENSE
+!CHANGELOG.md

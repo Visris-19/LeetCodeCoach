@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LeetCoach - Your AI-powered DSA learning companion. Master data structures, algorithms, and coding interviews with personalized mentoring and adaptive practice." />
+    <meta name="keywords" content="LeetCode, DSA, Data Structures, Algorithms, Coding Interview, Programming, Java, Practice, Learning" />
+    <meta name="author" content="LeetCoach" />
+    <meta name="theme-color" content="#1a1a2e" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="LeetCoach - AI-Powered DSA Learning Platform" />
+    <meta property="og:description" content="Master coding interviews with personalized DSA mentoring, adaptive practice, and AI-powered learning paths." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://leetcoach.com" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:site_name" content="LeetCoach" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LeetCoach - AI-Powered DSA Learning" />
+    <meta name="twitter:description" content="Master coding interviews with personalized DSA mentoring and adaptive practice." />
+    <meta name="twitter:image" content="/twitter-image.png" />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <!-- Title -->
+    <title>LeetCoach - AI-Powered DSA Learning & Interview Prep</title>
+    
+    <!-- Custom CSS for loading screen -->
+    <style>
+      /* Loading Screen Styles */
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        font-family: 'Inter', sans-serif;
+        color: white;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-logo {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(45deg, #3b82f6, #06b6d4);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 24px;
+        animation: pulse 2s infinite;
+        box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+      }
+      
+      .loading-text {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        background: linear-gradient(45deg, #3b82f6, #06b6d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .loading-subtitle {
+        font-size: 14px;
+        color: #94a3b8;
+        margin-bottom: 32px;
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #334155;
+        border-top: 3px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-dots {
+        display: flex;
+        gap: 4px;
+        margin-top: 16px;
+      }
+      
+      .dot {
+        width: 8px;
+        height: 8px;
+        background: #3b82f6;
+        border-radius: 50%;
+        animation: bounce 1.4s infinite ease-in-out;
+      }
+      
+      .dot:nth-child(1) { animation-delay: -0.32s; }
+      .dot:nth-child(2) { animation-delay: -0.16s; }
+      .dot:nth-child(3) { animation-delay: 0s; }
+      
+      @keyframes bounce {
+        0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+        40% { transform: scale(1.2); opacity: 1; }
+      }
+      
+      /* Hide loading screen when app loads */
+      .loaded #loading-screen {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="loading-logo">LC</div>
+      <div class="loading-text">LeetCoach</div>
+      <div class="loading-subtitle">AI-Powered DSA Learning Platform</div>
+      <div class="loading-spinner"></div>
+      <div class="loading-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+    
+    <!-- Main App Container -->
+    <div id="root"></div>
+    
+    <!-- JavaScript -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Loading Screen Script -->
+    <script>
+      // Remove loading screen when app loads
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.body.classList.add('loaded');
+          setTimeout(() => {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+              loadingScreen.remove();
+            }
+          }, 500);
+        }, 1000); // Show loading for at least 1 second
+      });
+      
+      // Fallback: Remove loading screen after 5 seconds
+      setTimeout(() => {
+        document.body.classList.add('loaded');
+      }, 5000);
+    </script>
+  </body>
+</html>
