@@ -2,10 +2,9 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 require('dotenv').config();
 
 // Your API key from .env file
-const API_KEY = process.env.GEMINI_API_KEY || 'AIzaSyAt3RBBqIid_ACku6fsdIweKL-hLwhXe58';
+const API_KEY = process.env.GEMINI_API_KEY;
 
 console.log('🧪 Testing Gemini 1.5 Flash API...');
-console.log('API Key:', API_KEY ? `${API_KEY.substring(0, 20)}...` : 'Not found');
 
 async function testGeminiAPI() {
   try {
