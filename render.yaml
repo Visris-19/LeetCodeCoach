@@ -1,0 +1,40 @@
+services:
+  # Backend API Service
+  - type: web
+    name: leetcoach-api
+    env: node
+    plan: starter
+    region: oregon
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+    scaling:
+      minInstances: 1
+      maxInstances: 3
+
+  # Frontend Static Site
+  - type: web
+    name: leetcoach-frontend
+    env: static
+    plan: starter
+    region: oregon
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://leetcoach-api.onrender.com/api
+    headers:
+      - path: /*
+        headers:
+          - key: X-Frame-Options
+            value: DENY
+          - key: X-Content-Type-Options
+            value: nosniff

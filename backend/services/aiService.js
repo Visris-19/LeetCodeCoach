@@ -3,11 +3,10 @@ require('dotenv').config();
 
 // Initialize with fallback API key (same as test script)
 const API_KEY = process.env.GEMINI_API_KEY;
-// console.log('AI Service initialized with API key:', API_KEY ? `${API_KEY.substring(0, 20)}...` : 'Not found');
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
-// Rate limiting and retry configuration
+// Rate limiting and retry configurationthis
 const API_DELAY = 1000; // 1 second delay between API calls
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 2000; // 2 seconds between retries

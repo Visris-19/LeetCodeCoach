@@ -1,0 +1,47 @@
+{
+  "name": "leetcoach-fullstack",
+  "version": "1.0.0",
+  "description": "AI-Powered DSA Learning & Technical Interview Preparation Platform - Full Stack Application",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Visris-19/LeetCodeCoach.git"
+  },
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "keywords": [
+    "leetcode",
+    "dsa",
+    "interview-preparation",
+    "ai-powered",
+    "full-stack",
+    "react",
+    "nodejs",
+    "mongodb",
+    "education"
+  ],
+  "scripts": {
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "start": "cd backend && npm start",
+    "build": "cd frontend && npm run build",
+    "demo:populate": "cd backend && npm run demo:populate",
+    "demo:clear": "cd backend && npm run demo:clear",
+    "production:backend": "cd backend && npm run production",
+    "test": "echo 'Tests will be implemented' && exit 0",
+    "lint": "echo 'Linting configuration pending' && exit 0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "homepage": "https://github.com/Visris-19/LeetCodeCoach#readme",
+  "bugs": {
+    "url": "https://github.com/Visris-19/LeetCodeCoach/issues"
+  }
+}
